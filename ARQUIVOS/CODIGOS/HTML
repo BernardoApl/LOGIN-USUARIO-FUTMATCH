@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Registro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js";
+        // Importe outros módulos do Firebase conforme necessário
+      </script>
+    <!-- Add the Firebase products that you want to us-->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container sign-in-container">
+            <form id="signInForm" action="#">
+                <img src="Logo Futmatch (1).png" alt="Logo" class="logo">
+                <h1>Bem vindo de volta!</h1>
+                <p>Para continuar prosseguindo, faça o login do site</p>
+                <input type="email" id="signInEmail" placeholder="Email" required />
+                <input type="password" id="signInPassword" placeholder="Senha" required />
+                <button type="submit" class="sign-in-btn">Entrar</button>
+            </form>
+        </div>
+        <div class="form-container sign-up-container">
+            <form id="signUpForm" action="#">
+                <h1>Criar conta</h1>
+                <div class="social-container">
+                    <a href="https://www.instagram.com/accounts/login/" class="social"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsignup%3Fref_cta%3DSign%2Bup%26ref_loc%3Dheader%2Blogged%2Bout%26ref_page%3D%252F%26source%3Dheader-home" class="social"><i class="fab fa-github"></i></a>
+                    <a href="https://accounts.google.com/v3/signin/identifier?hl=pt-br&ifkv=AaSxoQwiI9ezPSh_lDP-DOtRUpqWLlPWIUeVr50TMRaPCOIbfSNubo58RsofR3S-1V_HDKp5W8U16g&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-1072807729%3A1716895005509886&ddm=0" class="social"><i class="fab fa-google"></i></a>
+                </div>
+                <span>Ou use o E-mail, Nome e crie uma senha para entrar no site</span>
+                <input type="text" id="signUpName" placeholder="Nome" required />
+                <input type="email" id="signUpEmail" placeholder="Email" required />
+                <input type="password" id="signUpPassword" placeholder="Senha" required />
+                <button type="submit" class="sign-up-btn">INSCREVER-SE</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
