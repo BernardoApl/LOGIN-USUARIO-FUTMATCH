@@ -1,0 +1,112 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f6f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+              0 10px 10px rgba(0, 0, 0, 0.22);
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  display: flex;
+}
+
+.form-container {
+  padding: 50px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-container {
+  background: #000000; 
+  color: white;
+}
+
+.sign-up-container {
+  background: #FFB400; 
+  color: white;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  margin: 20px 0 30px;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #FFB400;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #000000;
+  background-color: #FFB400;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.social-container a i {
+  font-size: 20px;
+  color: #333;
+}
+
+.logo {
+  width: 150px; /* Adjust the width of the logo */
+  margin-bottom: 20px;
+}
+
+/* Specific styles for sign-in button */
+.sign-in-btn {
+  background-color: #FFB400; /* Yellow background for sign-in button */
+  color: #FFFFFF; /* White text for sign-in button */
+}
