@@ -1,0 +1,11 @@
+{
+    "signIn": {
+        "email": "example@example.com",
+        "password": "password123"
+    },
+    "signUp": {
+        "name": "Nome Exemplo",
+        "email": "example@example.com",
+        "password": "password123"
+    }
+}
