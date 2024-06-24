@@ -1,0 +1,69 @@
+// Função para salvar dados no localStorage
+function saveToLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+// Função para recuperar dados do localStorage
+function getFromLocalStorage(key) {
+  const data = localStorage.getItem(key);
+  return data ? JSON.parse(data) : null;
+}
+
+// Função para download do arquivo JSON
+function downloadJSON(data, filename) {
+  const blob = new Blob([data], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// Evento de cadastro
+document.getElementById("signUpForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const name = document.getElementById("signUpName").value;
+  const email = document.getElementById("signUpEmail").value;
+  const password = document.getElementById("signUpPassword").value;
+
+  const users = getFromLocalStorage('users') || [];
+  
+  if (users.find(user => user.email === email)) {
+    alert("Email already registered.");
+    return;
+  }
+
+  const userData = {
+    name: name,
+    email: email,
+    password: password
+  };
+
+  users.push(userData);
+  saveToLocalStorage('users', users);
+
+  // Convertendo os dados do usuário para JSON e baixando o arquivo
+  const jsonData = JSON.stringify(userData, null, 2);
+  downloadJSON(jsonData, 'inscricao_futebol.json');
+
+  alert("User registered successfully!");
+});
+
+// Evento de login
+document.getElementById("signInForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const email = document.getElementById("signInEmail").value;
+  const password = document.getElementById("signInPassword").value;
+
+  const users = getFromLocalStorage('users') || [];
+  const user = users.find(user => user.email === email && user.password === password);
+
+  if (user) {
+    alert("User signed in successfully!");
+  } else {
+    alert("Invalid email or password.");
+  }
+});
